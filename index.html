@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Rss News</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+        <script src="app.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+        <style type="text/css">
+            body { padding-top:60px; } .navbar-right { padding-top:5px; color:#CCCCCC; }
+            .list-group { padding:5px; } .small { font-size:82%; }
+        </style>
+    </head>
+    <body ng-app="RssApp" ng-controller="show_feed">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">RSS News from &quot;The New York Times&quot;</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <h4 class="navbar-right">By Lucas Guegnolle</h4>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <ng-view></ng-view>
+        </div>
+    </body>
+</html>

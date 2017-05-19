@@ -1,0 +1,22 @@
+<div class="pull-right" ng-if="data_logo != null">
+    <a href="{{ data_logo.link }}"><img src="{{ data_logo.url }}"/></a>
+</div>
+<p>
+    <span class="label label-danger" ng-show="!data_feed.length">No Items</span>
+    <span class="label label-success" ng-show="data_feed.length > 0">{{ data_feed.length }} Items</span>
+</p>
+<div class="list-group" ng-if="new.title != null" ng-repeat="new in data_feed">
+    <h4 class="list-group-item-heading text-primary">{{ new.title }}</h4>
+    <div ng-if="isArray(new.description)" ng-repeat="description in new.description track by $index">
+        <span ng-bind-html="description | trustedContent"></span>
+    </div>
+    <div ng-if="!isArray(new.description)">
+        <span ng-bind-html="new.description | trustedContent"></span>
+    </div>
+    <p class="text-muted">
+        <span class="small">
+            {{ new.pubDate  | datetime }}&nbsp;hs By {{ new.creator }}
+        </span>
+    </p>
+    <p><a class="btn btn-default btn-xs" role="button" href="{{ new.link[1].href }}" target="_blank">Read more</a></p>
+</div>
